@@ -1,0 +1,26 @@
+{
+  "name": "codemachine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "next": "^8.0.3",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {}
+}
