@@ -11,7 +11,7 @@ const Footer = () => {
           aimed at creating unique and powerful tools for your business &amp; everyday life.</p>
         <hr />
         <div className="copyright">
-          <p>All rights reserved &copy;CodeMachine <span id="year">2018</span></p>
+          <p>All rights reserved &copy;CodeMachine <span id="year">{new Date().getFullYear()}</span></p>
         </div>
 
       </div>

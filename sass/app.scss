@@ -58,6 +58,17 @@ h4 {
   line-height: 1.2;
 }
 
+.scroll-to-top {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  color: $cm-primary;
+  font-size: 3em;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .responsive {
   display: block;
   width: 100%;

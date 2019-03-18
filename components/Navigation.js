@@ -1,6 +1,28 @@
+import Scroll from '../functions/Scroll';
+
+function scrollToAbout(e) {
+  e.preventDefault();
+  Scroll('about');
+}
+
+function scrollToOutsourcing(e) {
+  e.preventDefault();
+  Scroll('outsourcing');
+}
+
+function scrollToServices(e) {
+  e.preventDefault();
+  Scroll('services');
+}
+
+function scrollToContact(e) {
+  e.preventDefault();
+  Scroll('contact');
+}
+
 const Navigation = () => {
   return (
-    <header>
+    <header id="nav">
       <nav className="cm-container">
         <div className="logo">
           <a href="">
@@ -10,16 +32,16 @@ const Navigation = () => {
         <div className="nav-links">
           <ul>
             <li>
-              <a href="">About</a>
+              <a onClick={scrollToAbout} href="">About</a>
             </li>
             <li>
-              <a href="">Services</a>
+              <a onClick={scrollToServices} href="">Services</a>
             </li>
             <li>
-              <a href="">Outsourcing</a>
+              <a onClick={scrollToOutsourcing} href="">Outsourcing</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a onClick={scrollToContact} href="">Contact</a>
             </li>
           </ul>
         </div>

@@ -1,6 +1,6 @@
 const Outsourcing = () => {
   return (
-    <section className="outsourcing">
+    <section id='outsourcing' className="outsourcing">
       <div className="cm-container">
         <div className="image"></div>
         <div className="content">

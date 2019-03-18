@@ -1,84 +1,91 @@
-import {library} from '@fortawesome/fontawesome-svg-core'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faEnvelope, faPhone, faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons'
-import {faSkype, faFacebookF, faLinkedinIn, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons';
+async function sendMessage(e) {
+  e.preventDefault();
+  // remove previous errors
+  const requireds = document.getElementsByClassName('required');
+  const inputs = [...requireds];
+  removeErrors(inputs);
 
-library.add(faEnvelope, faPhone, faMapMarkerAlt, faSkype, faFacebookF, faLinkedinIn, faTwitter, faInstagram);
+  // validate input
+  const errors = validateInput();
+
+  if (errors.length > 0) {
+    showErrors(errors);
+    return false;
+  }
+  // send request
+  let response = await request();
+  let messageContainer = document.getElementById('responseMessage');
+  messageContainer.innerText = response;
+  messageContainer.style.display = 'inline-block';
+}
+
+function validateInput() {
+  const errors = [];
+  if (document.getElementById('email').value === '') {
+    errors.push({field: 'email', message: 'This field is required'})
+  }
+
+  if (document.getElementById('message').value === '') {
+    errors.push({field: 'message', message: 'This field is required'})
+  }
+
+  if (!validateEmail(document.getElementById('email').value)) {
+    errors.push({field: 'email', message: 'This is not valid email'})
+  }
+  return errors;
+}
+
+function validateEmail(email) {
+  let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+function showErrors(inputs) {
+  inputs.forEach(input => document.getElementById(input.field).classList.add('error'));
+}
+
+function removeErrors(inputs) {
+  inputs.forEach(input => input.classList.remove('error'));
+}
+
+async function request() {
+
+  const data = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value
+  };
+  let rawResponse = await fetch('http://localhost:5000/sendMessage', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  let response = await rawResponse.json();
+  return response.message;
+}
 
 const ContactForm = () => {
   return (
-    <section className="contact">
-      <div className="cm-container">
-        <div className="header">
-          <h3>Get in touch</h3>
-          <h2>Contact Us</h2>
+    <div className="contact-form">
+      <form id="contact-message" action="#">
+        <div className="cm-form-group">
+          <input type="text" id="name" name="name" placeholder="Name" className="cm-form-control"/>
         </div>
-        <div className="flex">
-          <div className="cm-info">
-            <div className="info-item">
-              <span className="cm-icon">
-                <FontAwesomeIcon icon="envelope"/>
-              </span>
-              <span>info@codemachine.rs</span>
-            </div>
-            <div className="info-item">
-              <span className="cm-icon">
-                 <FontAwesomeIcon icon="phone"/>
-              </span>
-              <span>+381 063 592 961</span>
-            </div>
-            <div className="info-item">
-              <span className="cm-icon">
-                  <FontAwesomeIcon icon={faMapMarkerAlt}/>
-              </span>
-              <span>Bulevar Oslobođenja 92/3, 21000 Novi Sad, Serbia</span>
-            </div>
-            <div className="info-item">
-              <span className="cm-icon">
-                  <FontAwesomeIcon icon={faSkype}/>
-              </span>
-              <span>CodeMachine</span>
-            </div>
-            <div className="social-networks">
-              <h4>Social Networks</h4>
-              <div className="social-icons">
-                <a href="https://facebook.com" className="icon">
-                  <FontAwesomeIcon icon={faFacebookF}/>
-                </a>
-                <a href="https://linkedin.com" className="icon">
-                  <FontAwesomeIcon icon={faLinkedinIn}/>
-                </a>
-                <a href="https://twitter.com" className="icon">
-                  <FontAwesomeIcon icon={faTwitter}/>
-                </a>
-                <a href="https://instagram.com" className="icon">
-                  <FontAwesomeIcon icon={faInstagram}/>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="contact-form">
-            <form id="contact-message" action="#">
-              <div className="cm-form-group">
-                <input type="text" id="name" name="name" placeholder="Name" className="cm-form-control"/>
-              </div>
-              <div className="cm-form-group">
-                <input type="email" id="email" name="email" placeholder="E-mail *"
-                       className="cm-form-control required"/>
-              </div>
-              <div className="cm-form-group">
-                                <textarea name="message" id="message" placeholder="Message *"
-                                          className="cm-form-control required"></textarea>
-              </div>
-              <div className="cm-form-group flex">
-                <button type="submit" id="sendMessage">Send</button>
-                <span id="responseMessage"></span>
-              </div>
-            </form>
-          </div>
+        <div className="cm-form-group">
+          <input type="email" id="email" name="email" placeholder="E-mail *"
+                 className="cm-form-control required"/>
         </div>
-      </div>
-    </section>
+        <div className="cm-form-group">
+          <textarea name="message" id="message" placeholder="Message *" className="cm-form-control required" />
+        </div>
+        <div className="cm-form-group flex">
+          <button type="button" onClick={sendMessage} id="sendMessage">Send</button>
+          <span id="responseMessage" />
+        </div>
+      </form>
+    </div>
   )
 };
 

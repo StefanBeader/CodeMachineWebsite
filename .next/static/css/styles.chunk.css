@@ -350,6 +350,15 @@ h4 {
   font-weight: 400;
   line-height: 1.2; }
 
+.scroll-to-top {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  color: #F6511D;
+  font-size: 3em; }
+  .scroll-to-top:hover {
+    cursor: pointer; }
+
 .responsive {
   display: block;
   width: 100%;
