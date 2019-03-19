@@ -5,13 +5,9 @@ import {faChevronCircleUp} from '@fortawesome/free-solid-svg-icons'
 
 library.add(faChevronCircleUp);
 
-function scrollToTop() {
-  Scroll('nav');
-}
-
 const ScrollToTop = () => {
   return (
-    <div onClick={scrollToTop} className="scroll-to-top">
+    <div onClick={() => Scroll('nav')} className="scroll-to-top">
       <FontAwesomeIcon icon={faChevronCircleUp}/>
     </div>
   )

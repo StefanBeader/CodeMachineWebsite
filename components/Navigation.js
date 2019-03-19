@@ -1,25 +1,5 @@
 import Scroll from '../functions/Scroll';
 
-function scrollToAbout(e) {
-  e.preventDefault();
-  Scroll('about');
-}
-
-function scrollToOutsourcing(e) {
-  e.preventDefault();
-  Scroll('outsourcing');
-}
-
-function scrollToServices(e) {
-  e.preventDefault();
-  Scroll('services');
-}
-
-function scrollToContact(e) {
-  e.preventDefault();
-  Scroll('contact');
-}
-
 const Navigation = () => {
   return (
     <header id="nav">
@@ -32,16 +12,16 @@ const Navigation = () => {
         <div className="nav-links">
           <ul>
             <li>
-              <a onClick={scrollToAbout} href="">About</a>
+              <a onClick={() => Scroll('about')} href="#">About</a>
             </li>
             <li>
-              <a onClick={scrollToServices} href="">Services</a>
+              <a onClick={() => Scroll('services')} href="#">Services</a>
             </li>
             <li>
-              <a onClick={scrollToOutsourcing} href="">Outsourcing</a>
+              <a onClick={() => Scroll('outsourcing')} href="#">Outsourcing</a>
             </li>
             <li>
-              <a onClick={scrollToContact} href="">Contact</a>
+              <a onClick={() => Scroll('contact')} href="#">Contact</a>
             </li>
           </ul>
         </div>
