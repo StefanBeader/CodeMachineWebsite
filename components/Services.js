@@ -21,7 +21,7 @@ const Services = () => {
     <section id="services" className="services">
       <div className="cm-container">
         <div className="header">
-          <h3>What We Do</h3>
+          <h3>What we do</h3>
           <h2>Services</h2>
         </div>
         <div className="services-items">

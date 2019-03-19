@@ -4,7 +4,7 @@ const About = () => {
       <div className="cm-container">
         <div className="content">
           <div className="header">
-            <h3>What We Do</h3>
+            <h3>Our culture</h3>
             <h2>About Us</h2>
           </div>
           <div>

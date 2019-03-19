@@ -1,3 +1,5 @@
+import Accordion from './Accordion';
+
 const Outsourcing = () => {
   return (
     <section id='outsourcing' className="outsourcing">
@@ -6,10 +8,7 @@ const Outsourcing = () => {
         <div className="content">
           <h3>Why chose us</h3>
           <h2>Outsourcing</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi fugiat hic nostrum sequi veniam.
-            Ab adipisci aliquam deleniti dolores eaque et fugit ipsa ipsam laboriosam laudantium, libero
-            maiores placeat porro praesentium quas quos sint, velit veniam? Consequatur neque quas totam ut?
-            Autem dicta ex explicabo incidunt nulla perspiciatis quos tempora!</p>
+          <Accordion />
         </div>
         <div>
         </div>

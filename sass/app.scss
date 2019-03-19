@@ -334,3 +334,20 @@ footer {
     border-radius: 36px;
   }
 }
+
+.Accordion {
+  margin-top: 2em;
+  div {
+    margin-top: 1em;
+    button {
+      @include cm-button($cm-primary);
+      width: 100%;
+      text-align: left;
+    }
+    p {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s;
+    }
+  }
+}
