@@ -35,16 +35,16 @@ const ContactInfo = () => {
       <div className="social-networks">
         <h4>Social Networks</h4>
         <div className="social-icons">
-          <a href="https://facebook.com" target="_blank" className="icon">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer" className="icon">
             <FontAwesomeIcon icon={faFacebookF}/>
           </a>
-          <a href="https://linkedin.com" target="_blank" className="icon">
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="icon">
             <FontAwesomeIcon icon={faLinkedinIn}/>
           </a>
-          <a href="https://twitter.com" target="_blank" className="icon">
+          <a href="https://twitter.com" target="_blank" rel="noreferrer" className="icon">
             <FontAwesomeIcon icon={faTwitter}/>
           </a>
-          <a href="https://instagram.com" target="_blank" className="icon">
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="icon">
             <FontAwesomeIcon icon={faInstagram}/>
           </a>
         </div>
