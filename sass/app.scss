@@ -351,3 +351,116 @@ footer {
     }
   }
 }
+
+.cm-hamburger {
+  display: none;
+  font-size: 40px;
+  text-align: right;
+}
+
+.mobile-nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .3);
+  overflow: hidden;
+  transition: width .3s;
+
+  .mobile-nav {
+    background-color: white;
+    width: 70vw;
+    height: 100vh;
+    li {
+      a {
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        padding: 12px 26px;
+        color: $cm-primary;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1050px) {
+  .cm-container {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .banner {
+    height: auto;
+    padding: 90px 0;
+    .cm-container {
+      flex-direction: column;
+      .banner-image {
+        width: 100%;
+      }
+      .call-to-action {
+        width: 100%;
+      }
+    }
+  }
+
+  .about {
+    .cm-container {
+      flex-direction: column;
+      .content {
+        width: 100%;
+      }
+      .image {
+        width: 100%;
+      }
+    }
+  }
+
+  .services {
+    .services-items {
+      flex-direction: column;
+      .items {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .outsourcing {
+    .cm-container {
+      flex-direction: column;
+
+      .content, .image {
+        width: 100%;
+      }
+    }
+  }
+
+  .contact {
+    .cm-container {
+      .flex {
+        flex-direction: column;
+        .cm-info, .contact-form {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 550px) {
+  .cm-container {
+    max-width: 90%;
+  }
+  header {
+    nav.cm-container {
+      .nav-links {
+        .large-nav {
+          display: none;
+        }
+      }
+    }
+  }
+  .cm-hamburger {
+    display: block;
+  }
+}

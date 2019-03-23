@@ -5,6 +5,7 @@ function scrollIt(id) {
     'left': 0,
     'top': element.offsetTop
   });
+  document.getElementById("mobile-nav").style.width = 0;
 }
 
 export default scrollIt;
