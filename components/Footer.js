@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="cm-container">
         <div className="logo">
           <a href="">
-            <img src="https://via.placeholder.com/300x150" alt="" />
+            <img src="../static/images/logo.png" className="image-responsive" alt="" />
           </a>
         </div>
         <p>We are software development agency,

@@ -19,7 +19,7 @@ const Navigation = () => {
       <nav className="cm-container">
         <div className="logo">
           <a href="">
-            <img src="https://via.placeholder.com/150x50" alt="" />
+            <img src="../static/images/logo.png" className="image-responsive" alt="" />
           </a>
         </div>
         <div className="nav-links">
