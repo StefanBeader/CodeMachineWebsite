@@ -4,17 +4,17 @@ const Services = () => {
     {
       icon: 'data.svg',
       title: "Web Applications",
-      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut distinctio, magni perferendis veritatis vitae.'
+      body: 'Ease and speed up your business by automating the activities you\'ve worked on manually until now.'
     },
     {
       icon: 'application.svg',
       title: "Mobile Applications",
-      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut distinctio, magni perferendis veritatis vitae.'
+      body: 'You have an idea for a mobile application we will help you to realize it.'
     },
     {
       icon: 'web.svg',
       title: "Wordpress",
-      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut distinctio, magni perferendis veritatis vitae.'
+      body: 'Build your style and become aware with the help of a unique and high-quality website.'
     },
     ];
   return (

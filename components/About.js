@@ -8,11 +8,11 @@ const About = () => {
             <h2>About Us</h2>
           </div>
           <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Cupiditate, provident, voluptate.
-              Alias aliquam commodi culpa dignissimos doloremque earum et,
-              impedit laboriosam minus necessitatibus
-              perferendis placeat possimus quis sapiente temporibus vel.</p>
+            <p>CodeMachine is a company that develops complex web applications based on
+              standardized processes using the latest technologies. Individual approach with the maximum commitment
+              to the project and constant communication with the client is our philosophy of quality product.
+              Our goals is pure and stable code, innovation, precision and thoroughness
+              in the work supported by knowledge and extensive experience.</p>
           </div>
         </div>
         <div className="image"></div>
