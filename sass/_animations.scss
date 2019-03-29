@@ -6,10 +6,63 @@
   }
 }
 
+.outsourcing {
+  .content {
+    h2 {
+      animation-timing-function: cubic-bezier(.17,1.18,.45,1.46);
+      animation-name: fade-from-right;
+      animation-duration: 2s;
+      animation-delay: .5s;
+    }
+    h3 {
+      animation-timing-function: cubic-bezier(.17,1.18,.45,1.46);
+      animation-name: fade-from-right;
+      animation-duration: 2s;
+    }
+
+    .Accordion {
+        animation-timing-function: cubic-bezier(.17,1.18,.45,1.46);
+        animation-name: fade-from-right;
+        animation-duration: 2s;
+        animation-delay: 1s;
+    }
+  }
+}
+
+.services-items {
+  .items {
+    animation-timing-function: cubic-bezier(.17,1.18,.45,1.46);
+    animation-name: fade-from-bottom;
+    animation-duration: 2s;
+  }
+}
+
 @keyframes fade-from-left {
   from {
     opacity: 0;
-    transform: translate3d(-300px, 0, 0);
+    transform: translate3d(-400px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-from-right {
+  from {
+    opacity: 0;
+    transform: translate3d(400px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-from-bottom {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 200px, 0);
   }
   to {
     opacity: 1;
