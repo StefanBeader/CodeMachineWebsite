@@ -1,39 +1,26 @@
-.about {
-  .content {
-    animation-timing-function: cubic-bezier(.17,1.18,.45,1.46);
-    animation-name: fade-from-left;
-    animation-duration: 2s;
-  }
-}
+.animation {
+  opacity: 0;
+  transition: opacity .3s;
 
-.outsourcing {
-  .content {
-    h2 {
+  &.animate {
+    opacity: 1;
+    &.fade-from-left {
       animation-timing-function: cubic-bezier(.17,1.18,.45,1.46);
-      animation-name: fade-from-right;
+      animation-name: fade-from-left;
       animation-duration: 2s;
-      animation-delay: .5s;
     }
-    h3 {
+
+    &.fade-from-right {
       animation-timing-function: cubic-bezier(.17,1.18,.45,1.46);
       animation-name: fade-from-right;
       animation-duration: 2s;
     }
 
-    .Accordion {
-        animation-timing-function: cubic-bezier(.17,1.18,.45,1.46);
-        animation-name: fade-from-right;
-        animation-duration: 2s;
-        animation-delay: 1s;
+    &.fade-from-bottom {
+      animation-timing-function: cubic-bezier(.17,1.18,.45,1.46);
+      animation-name: fade-from-bottom;
+      animation-duration: 2s;
     }
-  }
-}
-
-.services-items {
-  .items {
-    animation-timing-function: cubic-bezier(.17,1.18,.45,1.46);
-    animation-name: fade-from-bottom;
-    animation-duration: 2s;
   }
 }
 

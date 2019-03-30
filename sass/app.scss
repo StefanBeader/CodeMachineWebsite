@@ -267,7 +267,7 @@ header {
     padding: 0;
     display: flex;
     .logo {
-      width: 150px;
+      width: 151px;
     }
     .nav-links {
       flex: 1;
@@ -305,7 +305,7 @@ header {
 footer {
   background-color: #242424;
   text-align: center;
-  padding-top: 30px;
+  padding: 5.625em 0;
   .logo {
     margin: 0 auto;
     max-width: 300px;

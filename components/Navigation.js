@@ -12,7 +12,6 @@ function openMobileMenu() {
 function closeMobileMenu(e) {
   document.getElementById("mobile-nav").style.width = 0;
 }
-
 const Navigation = () => {
   return (
     <header id="nav">

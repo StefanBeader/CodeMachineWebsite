@@ -1,7 +1,7 @@
 import React from 'react';
 const ServiceItem = (props) => {
   return (
-    <div className="items">
+    <div className="items animation fade-from-bottom">
       <div className="icon">
         <img src={`/static/images/${props.service.icon}`} alt="" className="responsive" />
       </div>

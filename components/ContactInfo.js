@@ -7,7 +7,7 @@ library.add(faEnvelope, faPhone, faMapMarkerAlt, faSkype, faFacebookF, faLinkedi
 
 const ContactInfo = () => {
   return (
-    <div className="cm-info">
+    <div className="cm-info animation fade-from-left">
       <div className="info-item">
               <span className="cm-icon">
                 <FontAwesomeIcon icon="envelope"/>

@@ -68,7 +68,7 @@ async function request() {
 
 const ContactForm = () => {
   return (
-    <div className="contact-form">
+    <div className="contact-form  animation fade-from-bottom">
       <form id="contact-message" action="#">
         <div className="cm-form-group">
           <input type="text" id="name" name="name" placeholder="Name" className="cm-form-control"/>
