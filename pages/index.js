@@ -1,4 +1,4 @@
-import React from 'react';
+import {Component} from 'react';
 import Head from 'next/head';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -10,7 +10,6 @@ import Contact from '../components/Contact';
 import ScrollToTop from '../components/ScrollToTop';
 import "../sass/app.scss";
 import Animate from "../functions/Animation";
-import {Component} from 'react';
 
 class HomePage extends Component {
 

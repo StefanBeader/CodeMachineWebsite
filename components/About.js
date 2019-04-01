@@ -2,7 +2,7 @@ const About = () => {
   return (
     <section id="about" className="about">
       <div className="cm-container">
-        <div className="content animation fade-from-left">
+        <div className="content animation fade-from-left s2">
           <div className="header">
             <h3>Our culture</h3>
             <h2>About Us</h2>

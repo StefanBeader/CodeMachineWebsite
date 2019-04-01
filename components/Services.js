@@ -17,6 +17,7 @@ const Services = () => {
       body: 'Build your style and become aware with the help of a unique and high-quality website.'
     },
     ];
+  let delay = -500;
   return (
     <section id="services" className="services">
       <div className="cm-container">
@@ -26,7 +27,8 @@ const Services = () => {
         </div>
         <div className="services-items">
           {services.map((service, index) => {
-            return <ServiceItem key={index} service={service}/>
+            delay += 500;
+            return <ServiceItem key={index} delay={delay} service={service}/>
           })}
         </div>
       </div>

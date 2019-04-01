@@ -1,3 +1,7 @@
+@mixin delay($delay) {
+  animation-delay: $delay;
+}
+
 .animation {
   opacity: 0;
   &.animate {
@@ -19,6 +23,21 @@
       animation-name: fade-from-bottom;
       animation-duration: 2s;
     }
+  }
+  &.delay-500 {
+    @include delay(500ms)
+  }
+  &.delay-1000 {
+    @include delay(1000ms)
+  }
+  &.delay-1500 {
+    @include delay(1500ms)
+  }
+  &.delay-2000 {
+    @include delay(2000ms)
+  }
+  &.delay-3000 {
+    @include delay(3000ms)
   }
 }
 
