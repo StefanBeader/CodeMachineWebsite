@@ -1,9 +1,10 @@
-function scrollIt(id) {
+function scrollIt(id, event) {
+  if (event !== undefined) event.preventDefault();
   let element = document.getElementById(id);
-  window.scrollTo({
+  window.scroll({
     'behavior': 'smooth',
     'left': 0,
-    'top': element.offsetTop
+    'top': element.offsetTop,
   });
   document.getElementById("mobile-nav").style.width = 0;
 }

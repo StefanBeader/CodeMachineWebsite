@@ -1,6 +1,5 @@
 import React from 'react';
 const ServiceItem = (props) => {
-    console.log(props)
   return (
     <div className={`items animation fade-from-bottom delay-${props.delay}`}>
       <div className="icon">

@@ -24,16 +24,16 @@ const Navigation = () => {
         <div className="nav-links">
           <ul className="large-nav">
             <li>
-              <a onClick={() => Scroll('about')} href="#">About</a>
+              <a onClick={(e) => Scroll('about', e)} href="#">About</a>
             </li>
             <li>
-              <a onClick={() => Scroll('services')} href="#">Services</a>
+              <a onClick={(e) => Scroll('services', e)} href="#">Services</a>
             </li>
             <li>
-              <a onClick={() => Scroll('outsourcing')} href="#">Outsourcing</a>
+              <a onClick={(e) => Scroll('outsourcing', e)} href="#">Outsourcing</a>
             </li>
             <li>
-              <a onClick={() => Scroll('contact')} href="#">Contact</a>
+              <a onClick={(e) => Scroll('contact', e)} href="#">Contact</a>
             </li>
           </ul>
           <div className="cm-hamburger" onClick={openMobileMenu}>
@@ -43,16 +43,16 @@ const Navigation = () => {
         <div className="mobile-nav-wrapper" id="mobile-nav" onClick={closeMobileMenu}>
           <ul className="mobile-nav">
             <li>
-              <a onClick={() => Scroll('about')} href="#">About</a>
+              <a onClick={(e) => Scroll('about', e)} href="#">About</a>
             </li>
             <li>
-              <a onClick={() => Scroll('services')} href="#">Services</a>
+              <a onClick={(e) => Scroll('services', e)} href="#">Services</a>
             </li>
             <li>
-              <a onClick={() => Scroll('outsourcing')} href="#">Outsourcing</a>
+              <a onClick={(e) => Scroll('outsourcing', e)} href="#">Outsourcing</a>
             </li>
             <li>
-              <a onClick={() => Scroll('contact')} href="#">Contact</a>
+              <a onClick={(e) => Scroll('contact', e)} href="#">Contact</a>
             </li>
           </ul>
         </div>
