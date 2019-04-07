@@ -15,7 +15,9 @@ const About = () => {
               in the work supported by knowledge and extensive experience.</p>
           </div>
         </div>
-        <div className="image"></div>
+        <div className="image">
+          <img src="../static/images/2-about-us.svg" className="image-responsive" alt=""/>
+        </div>
       </div>
     </section>
   )

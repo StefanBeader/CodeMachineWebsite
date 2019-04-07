@@ -1,5 +1,7 @@
 async function sendMessage(e) {
   e.preventDefault();
+  let form = e.target;
+  clearResponseMessage();
   // remove previous errors
   const requireds = document.getElementsByClassName('required');
   const inputs = [...requireds];
@@ -7,30 +9,48 @@ async function sendMessage(e) {
 
   // validate input
   const errors = validateInput();
-
   if (errors.length > 0) {
     showErrors(errors);
+    responseMessage(errors[errors.length - 1].message, 'error');
     return false;
   }
   // send request
-  let response = await request();
+  let response = await request().catch(() => {
+    responseMessage('Error occurred. Please try again later.', 'error');
+  });
+  if (response !== undefined) {
+    responseMessage(response.message, response.responseClass);
+    if (response.responseClass === 'success') {
+      form.reset();
+    }
+  }
+}
+
+function clearResponseMessage() {
   let messageContainer = document.getElementById('responseMessage');
-  messageContainer.innerText = response;
-  messageContainer.style.display = 'inline-block';
+  messageContainer.innerText = '';
+  messageContainer.className = '';
+}
+
+function responseMessage(message, messageClass) {
+  let messageContainer = document.getElementById('responseMessage');
+  messageContainer.innerText = message;
+  messageContainer.classList.add(messageClass);
+  messageContainer.classList.add('show');
 }
 
 function validateInput() {
   const errors = [];
   if (document.getElementById('email').value === '') {
-    errors.push({field: 'email', message: 'This field is required'})
+    errors.push({field: 'email', message: 'Email field is required'})
   }
 
   if (document.getElementById('message').value === '') {
-    errors.push({field: 'message', message: 'This field is required'})
+    errors.push({field: 'message', message: 'Message field is required'})
   }
 
   if (!validateEmail(document.getElementById('email').value)) {
-    errors.push({field: 'email', message: 'This is not valid email'})
+    errors.push({field: 'email', message: 'Invalid email'})
   }
   return errors;
 }
@@ -62,14 +82,13 @@ async function request() {
     },
     body: JSON.stringify(data),
   });
-  let response = await rawResponse.json();
-  return response.message;
+  return await rawResponse.json();
 }
 
 const ContactForm = () => {
   return (
     <div className="contact-form  animation fade-from-bottom">
-      <form id="contact-message" action="#">
+      <form id="contact-message" onSubmit={sendMessage} action="#">
         <div className="cm-form-group">
           <input type="text" id="name" name="name" placeholder="Name" className="cm-form-control"/>
         </div>
@@ -81,7 +100,7 @@ const ContactForm = () => {
           <textarea name="message" id="message" placeholder="Message *" className="cm-form-control required" />
         </div>
         <div className="cm-form-group flex">
-          <button type="button" onClick={sendMessage} id="sendMessage">Send</button>
+          <button type="submit" id="sendMessage">Send</button>
           <span id="responseMessage" />
         </div>
       </form>

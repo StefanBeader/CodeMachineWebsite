@@ -2,24 +2,7 @@
 @import "variables";
 @import "layout";
 @import "animations";
-
-@mixin cm-button($color) {
-  background-color: $color;
-  border: 2px solid $color;
-  color: white;
-  padding: 17px 10px;
-  border-radius: 35px;
-  min-width: 200px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-family: $font-family-headers;
-  transition: background-color .3s, border-color .3s;
-  &:hover {
-    background-color: #001835;
-    border-color: #001835;
-    cursor: pointer;
-  }
-}
+@import "buttons";
 
 * {
   margin: 0;
@@ -30,20 +13,10 @@
   }
 }
 
-.image-responsive {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 html, body {
-  color: #242424;
+  color: $font-color;
   line-height: 1.6em;
   font-family: $font-family-text;
-}
-
-.cm-button {
-  @include cm-button($cm-secondary);
 }
 
 h2 {
@@ -69,27 +42,11 @@ h4 {
   line-height: 1.2;
 }
 
-.scroll-to-top {
-  position: fixed;
-  right: 1em;
-  bottom: 1em;
-  color: white;
-  background-color: $cm-primary;
-  font-size: 2em;
-  border-radius: 50%;
-  padding: .3em;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.responsive {
+.image-responsive {
   display: block;
   width: 100%;
   height: auto;
 }
-
-
 
 .banner {
   background-color: $cm-primary;
@@ -108,15 +65,15 @@ h4 {
       width: 50%;
       h2 {
         color: white;
-        margin-bottom: 30px;
+        margin-bottom: 1.875em;
       }
       p {
         color: white;
-        margin-bottom: 30px;
+        margin-bottom: 1.875em;
       }
 
       .cm-button:first-of-type {
-        margin-right: 30px;
+        margin-right: 1.875em;
       }
     }
   }
@@ -150,12 +107,12 @@ h4 {
         .social-icons {
           display: flex;
           .icon {
-            padding: 10px;
+            padding: .625em;
             background-color: $cm-primary;
             margin-right: 1em;
             border-radius: 50%;
             transition: background-color .3s;
-            min-width: 45px;
+            min-width: 2.8125em;
             text-align: center;
             margin-top: 1em;
             svg {
@@ -164,7 +121,7 @@ h4 {
               }
             }
             &:hover {
-              background-color: #001835;
+              background-color: $cm-dark-blue;
             }
           }
         }
@@ -181,7 +138,7 @@ h4 {
       width: 50%;
 
       p {
-        margin-top: 30px;
+        margin-top: 1.875em;
         line-height: 1.8em;
       }
     }
@@ -202,10 +159,10 @@ h4 {
     .items {
       flex: 1;
       border: 3px solid #d1dceb;
-      border-radius: 18px;
-      margin-right: 30px;
-      padding: 60px 30px;
-      margin-top: 50px;
+      border-radius: 1.125em;
+      margin-right: 1.875em;
+      padding: 3.75em 1.875em;
+      margin-top: 3.125em;
       text-align: center;
 
       &:last-of-type {
@@ -219,23 +176,23 @@ h4 {
       h4 {
         font-weight: 400;
         font-style: normal;
-        font-size: 30px;
+        font-size: 1.875em;
         line-height: 1.2;
         letter-spacing: 0;
-        margin-top: 30px;
+        margin-top: 1.875em;
 
         &:after {
           content: '';
           display: block;
-          width: 50px;
+          width: 3.125em;
           height: 5px;
           background: #23bc3d;
           text-align: center;
-          margin: 30px auto 0 auto;
+          margin: 1.875em auto 0 auto;
         }
       }
       p {
-        margin-top: 30px;
+        margin-top: 1.875em;
       }
     }
   }
@@ -265,12 +222,12 @@ h4 {
 }
 
 header {
-  padding: 15px 0;
+  padding: 1em 0;
   nav.cm-container {
     padding: 0;
     display: flex;
     .logo {
-      width: 151px;
+      width: 9.375em;
     }
     .nav-links {
       flex: 1;
@@ -283,12 +240,12 @@ header {
         li {
           display: inline-block;
           a {
-            height: 50px;
+            height: 3.125em;
             display: block;
             text-decoration: none;
-            color: #242424;
-            margin-right: 24px;
-            line-height: 50px;
+            color: $font-color;
+            margin-right: 1.5em;
+            line-height: 3.125em;
             transition: color .3s;
             &:hover {
               color: $cm-primary;
@@ -306,17 +263,17 @@ header {
 }
 
 footer {
-  background-color: #242424;
+  background-color: $font-color;
   text-align: center;
-  padding: 5.625em 0;
+  padding-top: 5.625em;
   .logo {
     margin: 0 auto;
-    max-width: 300px;
+    max-width: 18.75em;
   }
 
   p {
     color: white;
-    padding: 30px 0;
+    padding: 1.875em 0;
   }
 
   .cm-container {
@@ -331,9 +288,9 @@ footer {
   .cm-form-control {
     width: 100%;
     border: 2px solid #e3eaf3;
-    padding: 17px 25px;
-    line-height: 22px;
-    border-radius: 35px;
+    padding: 1em 1.5625em;
+    line-height: 1.375em;
+    border-radius: 2.1875em;
 
     &.error {
       border-color: $red;
@@ -344,16 +301,31 @@ footer {
   }
   button {
     @include cm-button($cm-primary);
-    margin-right: 30px;
+    margin-right: 1.875em;
   }
 
   #responseMessage {
     display: none;
     flex: 1;
-    line-height: 56px;
+    line-height: 3.5em;
     text-align: center;
-    border: 2px solid $cm-secondary;
-    border-radius: 36px;
+    border: 2px solid;
+    border-radius: 2.25em;
+    opacity: 0;
+    transition: opacity 1s;
+
+    &.show {
+      display: block;
+      opacity: 1;
+    }
+    &.success {
+      border-color: $green;
+      color: $green;
+    }
+    &.error {
+      border-color: $red;
+      color: $red;
+    }
   }
 }
 
@@ -376,7 +348,7 @@ footer {
 
 .cm-hamburger {
   display: none;
-  font-size: 40px;
+  font-size: 2.5em;
   text-align: right;
   color: $cm-primary;
 }
@@ -400,17 +372,17 @@ footer {
         text-decoration: none;
         display: block;
         width: 100%;
-        padding: 12px 26px;
+        padding: .75em 1.625em;
         color: $cm-primary;
       }
     }
   }
 }
 
-@media all and (max-width: 1050px) {
+@media all and (max-width: 103.125em) {
   .banner {
     height: auto;
-    padding: 90px 0;
+    padding: 5.625em 0;
     .cm-container {
       flex-direction: column;
       .banner-image {
@@ -465,18 +437,31 @@ footer {
   }
 }
 
-@media all and (max-width: 550px) {
+@media all and (max-width: 34.375em) {
+  main {
+    padding-top: 80px;
+  }
   header {
+    position: fixed;
+    background: white;
+    width: 100%;
+    box-shadow: 0 10px 5px 0 rgba(0, 0, 0, 0.5);
+    z-index: 2000;
     nav.cm-container {
       .nav-links {
         .large-nav {
           display: none;
         }
       }
+      .logo {
+        width: 6em;
+      }
     }
   }
   .cm-hamburger {
     display: block;
+    font-size: 3em;
+    align-self: center;
   }
   .scroll-to-top {
     bottom: .5em;
